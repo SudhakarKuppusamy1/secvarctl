@@ -21,14 +21,6 @@ static bool is_global_variable(const char *variable_name)
 }
 
 /*
- * check it whether given variable is SBAT
- */
-static bool is_sbat_variable(const char *variable_name)
-{
-	return !strcmp(variable_name, SBAT_VARIABLE);
-}
-
-/*
  * does prevalidation on input info, then given all the input information it should generate
  * an esl file and its size and return a SUCCESS or negative number (ERROR)
  *

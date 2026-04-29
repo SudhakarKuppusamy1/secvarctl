@@ -56,6 +56,11 @@ struct signature_type_info {
 extern const struct signature_type_info signature_type_list[];
 
 /*
+ * check it whether given variable is SBAT
+ */
+bool is_sbat_variable(const char *variable_name);
+
+/*
  * check it whether given variable is trustedcadb
  */
 bool is_trustedcadb_variable(const char *variable_name);

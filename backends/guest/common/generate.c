@@ -362,6 +362,9 @@ int create_auth_msg(const uint8_t *new_esl, const size_t new_esl_size,
 	if (out_buffer == NULL) {
 		prlog(PR_ERR, "out_buffer was NULL, this is likely a bug");
 		return ALLOC_FAIL; // Not entirely true, but there's not a better error for this yet
+	} else if (is_sbat_variable(args->variable_name) && args->append_flag) {
+		prlog(PR_ERR, "ERROR: cannot generate auth file, append update is not supported for SBAT\n");
+		return AUTH_FAIL;
 	}
 
 	rc = create_pkcs7(new_esl, new_esl_size, args, guid, &pkcs7, &pkcs7_size);

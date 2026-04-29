@@ -32,6 +32,14 @@ static uint8_t append[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01 };
 static uint8_t replace[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 
 /*
+ * check it whether given variable is SBAT
+ */
+bool is_sbat_variable(const char *variable_name)
+{
+	return !strcmp(variable_name, SBAT_VARIABLE);
+}
+
+/*
  * check it whether given variable is trustedcadb
  */
 bool is_trustedcadb_variable(const char *variable_name)
